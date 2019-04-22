@@ -13,6 +13,7 @@ using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Media;
 
 namespace Music_App
 {
@@ -520,6 +521,18 @@ namespace Music_App
             animation1.Duration = new Duration(TimeSpan.FromMilliseconds(0.1));
             buttonAdd3.BeginAnimation(OpacityProperty, animation1);
             buttonPlay3.BeginAnimation(OpacityProperty, animation1);
+        }
+        
+        private void ButtonPlay2_Click(object sender, RoutedEventArgs e)
+        {
+            mediaElementAriana.Source = new Uri(@"C:\Pobrane\ariana-grande-7-rings_2569401.mp4");
+            mediaElementAriana.Play();
+        }
+
+        private void ButtonPlay3_Click(object sender, RoutedEventArgs e)
+        {
+            mediaElementAriana.Source = new Uri(@"C:\Pobrane\Beetles Let It Be.mp4");
+            mediaElementAriana.Play();
         }
     }
 }
