@@ -525,14 +525,14 @@ namespace Music_App
         
         private void ButtonPlay2_Click(object sender, RoutedEventArgs e)
         {
-            mediaElementAriana.Source = new Uri(@"C:\Pobrane\ariana-grande-7-rings_2569401.mp4");
-            mediaElementAriana.Play();
+            mediaElementVideo.Source = new Uri(@"C:\Pobrane\ariana-grande-7-rings_2569401.mp4");
+            mediaElementVideo.Play();
         }
 
         private void ButtonPlay3_Click(object sender, RoutedEventArgs e)
         {
-            mediaElementAriana.Source = new Uri(@"C:\Pobrane\Beetles Let It Be.mp4");
-            mediaElementAriana.Play();
+            mediaElementVideo.Source = new Uri(@"C:\Pobrane\Beetles Let It Be.mp4");
+            mediaElementVideo.Play();
         }
     }
 }
