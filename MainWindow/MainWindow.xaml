@@ -150,6 +150,18 @@
             </Button.Background>
         </Button>
         <TextBlock x:Name="textBlock" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="137,10,0,0" Height="29" Width="149" FontSize="22" Foreground="White"><Run Text="Daw"/><Run Text="i"/><Run Text="d"/><Run Text=" Janczyk"/></TextBlock>
+        <Button x:Name="buttonNext" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="1462,520,0,0" Height="75" BorderBrush="{x:Null}">
+            <Button.Background>
+                <ImageBrush ImageSource="Icons/appbar.navigate.next.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="buttonPause" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="1344,520,0,0" Height="75" BorderBrush="{x:Null}">
+            <Button.Background>
+                <ImageBrush ImageSource="Icons/appbar.control.pause.png"/>
+            </Button.Background>
+        </Button>
+        <MediaElement x:Name="mediaElementVideo" HorizontalAlignment="Left" Height="315" Margin="1296,266,0,0" VerticalAlignment="Top" Width="275"
+                      LoadedBehavior="Manual"/>
 
 
     </Grid>
