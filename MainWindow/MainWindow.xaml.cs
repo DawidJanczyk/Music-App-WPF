@@ -529,5 +529,12 @@ namespace Music_App
             use.Show();
             this.Close();
         }
+        
+        private void ButtonPlay3_Click_1(object sender, RoutedEventArgs e)
+        {
+            Beatles use = new Beatles();
+            use.Show();
+            this.Close();
+        }
     }
 }
