@@ -1,0 +1,107 @@
+﻿<Window x:Class="Music_App.Beatles"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Music_App"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="Beatles" Height="900" Width="1600" AllowsTransparency="True" WindowStyle="None">
+    <Window.Resources>
+        <Style x:Key="MyButton" TargetType="Button">
+            <Setter Property="OverridesDefaultStyle" Value="True" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Name="border" BorderThickness="0" BorderBrush="Black" Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Opacity" Value="0.7" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="ScrollBar">
+            <Setter Property="Background" Value="White"/>
+        </Style>
+    </Window.Resources>
+    <Grid Background="#FF191919">
+        <Rectangle Fill="#FF303030" HorizontalAlignment="Left" Height="856" VerticalAlignment="Top" Width="320" Opacity="0.1" Margin="0,44,0,0"/>
+        <Button x:Name="buttonClose" Style="{StaticResource MyButton}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Height="50" Margin="1550,0,0,0" Click="ButtonClose_Click" >
+            <Button.Background>
+                <ImageBrush ImageSource="Icons/appbar.close.png"/>
+            </Button.Background>
+        </Button>
+        <ScrollViewer HorizontalAlignment="Left" Height="858" VerticalAlignment="Top" Width="320" Margin="0,44,0,-2" Foreground="{x:Null}" BorderBrush="Black">
+            <StackPanel>
+                <Button x:Name="buttonHome" Style="{StaticResource MyButton}"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="70" Margin="0,30,0,0" Height="70" BorderBrush="{x:Null}" MaxWidth="70" MaxHeight="70" Click="ButtonHome_Click" MouseEnter="MouseEnterHome" MouseLeave="MouseLeaveHome">
+                    <Button.Background>
+                        <ImageBrush ImageSource="Icons/appbar.home.empty.png"/>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="buttonHome1" Style="{StaticResource MyButton}"  Content="Home" HorizontalAlignment="Left" VerticalAlignment="Top" Width="229" Margin="70,-60,0,0" Height="50" FontSize="36" Foreground="White" BorderBrush="#FF1B1B1B" FontWeight="Bold" Click="ButtonHome1_Click" MouseEnter="MouseEnterHome1" MouseLeave="MouseLeaveHome1">
+                    <Button.Background>
+                        <ImageBrush/>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="buttonBrowse" Style="{StaticResource MyButton}"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="70" Margin="0,30,0,0" Height="70" BorderBrush="{x:Null}" MaxWidth="70" MaxHeight="70" Click="ButtonBrowse_Click" MouseEnter="MouseEnterBrowse" MouseLeave="MouseLeaveBrowse">
+                    <Button.Background>
+                        <ImageBrush ImageSource="Icons/appbar.magnify.browse.png"/>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="buttonBrowse1" Style="{StaticResource MyButton}"  Content="Browse" HorizontalAlignment="Left" VerticalAlignment="Top" Width="229" Margin="70,-60,0,0" Height="50" FontSize="36" Foreground="White" BorderBrush="#FF1B1B1B" FontWeight="Bold" Click="ButtonBrowse1_Click" MouseEnter="MouseEnterBrowse1" MouseLeave="MouseLeaveBrowse1">
+                    <Button.Background>
+                        <ImageBrush/>
+                    </Button.Background>
+                </Button>
+                <TextBlock x:Name="textBlockGenres" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="40,50,0,0" Height="30" Width="91" Foreground="#FF919191" FontSize="22" RenderTransformOrigin="0.5,0.5" Text="Genres"/>
+                <Button x:Name="buttonPop" Style="{StaticResource MyButton}" Content="Pop" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Background="{x:Null}" Foreground="White" BorderBrush="{x:Null}" Height="48" FontSize="28" Margin="5,20,0,0"/>
+                <Button x:Name="buttonCountry" Style="{StaticResource MyButton}" Content="Country" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150" Background="{x:Null}" Foreground="White" BorderBrush="{x:Null}" Height="48" FontSize="28" Margin="5,20,0,0"/>
+                <Button x:Name="buttonHipHop" Style="{StaticResource MyButton}" Content="Hip-Hop" HorizontalAlignment="Left" VerticalAlignment="Top" Width="160" Background="{x:Null}" Foreground="White" BorderBrush="{x:Null}" Height="48" FontSize="28" Margin="5,20,0,0"/>
+                <Button x:Name="buttonRock" Style="{StaticResource MyButton}" Content="Rock" HorizontalAlignment="Left" VerticalAlignment="Top" Width="110" Background="{x:Null}" Foreground="White" BorderBrush="{x:Null}" Height="48" FontSize="28" Margin="5,20,0,0"/>
+                <Button x:Name="buttonJazz" Style="{StaticResource MyButton}" Content="Jazz" HorizontalAlignment="Left" VerticalAlignment="Top" Width="110" Background="{x:Null}" Foreground="White" BorderBrush="{x:Null}" Height="48" FontSize="28" Margin="5,20,0,0"/>
+                <Button x:Name="buttonMetal" Style="{StaticResource MyButton}" Content="Metal" HorizontalAlignment="Left" VerticalAlignment="Top" Width="125" Background="{x:Null}" Foreground="White" BorderBrush="{x:Null}" Height="48" FontSize="28" Margin="5,20,0,0"/>
+                <Button x:Name="buttonClassical" Style="{StaticResource MyButton}" Content="Classical" HorizontalAlignment="Left" VerticalAlignment="Top" Width="155" Background="{x:Null}" Foreground="White" BorderBrush="{x:Null}" Height="48" FontSize="28" Margin="5,20,0,0"/>
+                <Button x:Name="buttonReggae" Style="{StaticResource MyButton}" Content="Reggae" HorizontalAlignment="Left" VerticalAlignment="Top" Width="145" Background="{x:Null}" Foreground="White" BorderBrush="{x:Null}" Height="48" FontSize="28" Margin="5,20,0,0"/>
+                <Button x:Name="buttonBlues" Style="{StaticResource MyButton}" Content="Blues" HorizontalAlignment="Left" VerticalAlignment="Top" Width="125" Background="{x:Null}" Foreground="White" BorderBrush="{x:Null}" Height="48" FontSize="28" Margin="5,20,0,0"/>
+                <TextBlock x:Name="textBlockClear" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="40,50,0,0" Height="62" Width="91" Foreground="White" FontSize="22" RenderTransformOrigin="0.5,0.5"><Run Foreground="#FFB4B4B4" Text=""></Run></TextBlock>
+
+            </StackPanel>
+        </ScrollViewer>
+        <Rectangle Fill="#FF303030" HorizontalAlignment="Left" Height="44" VerticalAlignment="Top" Width="1282" Opacity="0.1"/>
+        <Button x:Name="button" Style="{StaticResource MyButton}" Content="D" HorizontalAlignment="Left" VerticalAlignment="Top" Width="40" Margin="74,4,0,0" Height="40" FontSize="22" BorderBrush="{x:Null}" Foreground="White">
+            <Button.Background>
+                <RadialGradientBrush>
+                    <GradientStop Color="#00000000" Offset="1"/>
+                    <GradientStop Color="#FF898989" Offset="0.976"/>
+                </RadialGradientBrush>
+            </Button.Background>
+        </Button>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="137,10,0,0" Height="29" Width="149" FontSize="22" Foreground="White"><Run Text="Daw"/><Run Text="i"/><Run Text="d"/><Run Text=" Janczyk"/></TextBlock>
+        <ScrollViewer HorizontalAlignment="Left" Height="858" VerticalAlignment="Top" Width="884" Margin="398,164,0,-122" Foreground="{x:Null}" BorderBrush="Black">
+            <StackPanel>
+                <Button x:Name="buttonDontLetMeDown" Style="{StaticResource MyButton}" Content="Don't Let Me Down" HorizontalAlignment="Left" VerticalAlignment="Top" Width="312" Background="{x:Null}" Foreground="White" BorderBrush="{x:Null}" Height="48" FontSize="28" Margin="5,20,0,0" Click="buttonDontLetMeDown_Click"/>
+                <Button x:Name="buttonHeyJude" Style="{StaticResource MyButton}" Content="Hey Jude" HorizontalAlignment="Left" VerticalAlignment="Top" Width="182" Background="{x:Null}" Foreground="White" BorderBrush="{x:Null}" Height="48" FontSize="28" Margin="5,20,0,0" Click="ButtonHeyJude_Click" />
+                <Button x:Name="buttonHelloGoodbye" Style="{StaticResource MyButton}" Content="Hello, Goodbye" HorizontalAlignment="Left" VerticalAlignment="Top" Width="264" Background="{x:Null}" Foreground="White" BorderBrush="{x:Null}" Height="48" FontSize="28" Margin="5,20,0,0" Click="ButtonHelloGoodbye_Click"/>
+                <Button x:Name="buttonLetItBe" Style="{StaticResource MyButton}" Content="Let it be" HorizontalAlignment="Left" VerticalAlignment="Top" Width="174" Background="{x:Null}" Foreground="White" BorderBrush="{x:Null}" Height="48" FontSize="28" Margin="5,20,0,0" Click="ButtonLetItBe_Click"  />
+                <Button x:Name="buttonPennyLane" Style="{StaticResource MyButton}" Content="Penny Lane" HorizontalAlignment="Left" VerticalAlignment="Top" Width="214" Background="{x:Null}" Foreground="White" BorderBrush="{x:Null}" Height="48" FontSize="28" Margin="5,20,0,0" Click="ButtonPennyLane_Click" />
+                <TextBlock x:Name="textBlockClear1" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="40,50,0,0" Height="62" Width="91" Foreground="White" FontSize="22" RenderTransformOrigin="0.5,0.5"><Run Foreground="#FFB4B4B4" Text=""></Run></TextBlock>
+
+            </StackPanel>
+        </ScrollViewer>
+
+        <Button x:Name="buttonPause" Style="{StaticResource MyButton}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="1396,520,0,0" Height="75" BorderBrush="{x:Null}" Click="ButtonPause_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="Icons/appbar.control.pause.png"/>
+            </Button.Background>
+        </Button>
+        <MediaElement x:Name="mediaElementVideo" HorizontalAlignment="Left" Height="315" Margin="1296,266,0,0" VerticalAlignment="Top" Width="275"
+                      LoadedBehavior="Manual"/>
+
+    </Grid>
+</Window>
